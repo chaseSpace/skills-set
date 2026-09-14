@@ -10,6 +10,7 @@
 
 - 先检测项目的 TypeScript / JavaScript、Tailwind / CSS、SSR / Next.js 和 shadcn 配置。
 - 根据项目选用 `TS-TW`、`TS-CSS`、`JS-TW` 或 `JS-CSS` 实现变体。
+- 需求不明确时先澄清项目、页面位置、效果、交互与约束；只有确认一个真实组件名（如 `AcidSquares`）后才会安装或引入代码。
 - 采用渐进式资料加载：文字动效、通用动效、UI 组件、背景和 React Bits Pro 分别独立。
 - 包含 SSR 客户端边界、依赖、无障碍、减少动态效果和性能方面的集成约束。
 

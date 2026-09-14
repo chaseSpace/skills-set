@@ -2,7 +2,7 @@
 
 ## Free React Bits registry
 
-Use a variant-specific component URL. `<Component>` is the PascalCase identifier in the category catalog; `<LANG>` is `JS` or `TS`; `<STYLE>` is `CSS` or `TW`.
+Only continue after the user has selected or approved one existing component identifier. Use a variant-specific component URL. `<Component>` is that exact PascalCase identifier in the category catalog; `<LANG>` is `JS` or `TS`; `<STYLE>` is `CSS` or `TW`.
 
 ```bash
 npx shadcn@latest add https://reactbits.dev/r/<Component>-<LANG>-<STYLE>
@@ -20,7 +20,7 @@ The equivalent jsrepo path is:
 npx jsrepo@latest add https://reactbits.dev/r/<Component>-<LANG>-<STYLE>
 ```
 
-Use shadcn when the project already has `components.json`; use jsrepo or manual copying when it does not. Run a CLI command only when the user asks to change the project. For advice-only requests, give the exact command instead.
+Use shadcn when the project already has `components.json`; use jsrepo or manual copying when it does not. Run a CLI command only when the user asks to change the project. For advice-only requests, give the exact command using the already selected identifier, never a placeholder or an inferred component name.
 
 ## After installation
 
@@ -33,7 +33,9 @@ Use shadcn when the project already has `components.json`; use jsrepo or manual 
 
 ## Manual source integration
 
-Use manual copy when a CLI is unavailable or the user wants the component under a specific local directory. Copy both the selected variant and every companion stylesheet/asset it imports; preserve relative imports. Then install the source-declared dependencies, adapt aliases to local relative paths, and use the component according to its current documentation.
+Use manual copy when a CLI is unavailable or the user wants the component under a specific local directory. Copy the whole selected component variant and every companion stylesheet/asset it imports; preserve relative imports. Then install the source-declared dependencies, adapt aliases to local relative paths, and use the component according to its current documentation.
+
+Do not extract a hook, shader, CSS effect, helper function, or JSX subsection from React Bits to approximate the selected visual. If the selected component does not fit after inspection, return to component selection and name a different existing component instead.
 
 ## Common failure modes
 
