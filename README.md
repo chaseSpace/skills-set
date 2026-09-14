@@ -4,15 +4,20 @@
 
 ## 安装
 
-克隆仓库后，将所需的**完整 Skill 目录**复制到 Agent 配置的 skills 目录：
+按需安装一个 Skill。以下示例只检出并安装 `react-bits`；将 `SKILL_NAME` 替换为可用 Skills 表中的名称即可：
 
 ```bash
-git clone git@github.com:chaseSpace/skills-set.git /tmp/skills-set
-mkdir -p /path/to/your-agent-skills
-cp -R /tmp/skills-set/<skill-name> /path/to/your-agent-skills/
+SKILL_NAME="react-bits"
+SKILLS_DIR="/path/to/your-agent-skills"
+
+git clone --depth 1 --filter=blob:none --sparse \
+  https://github.com/chaseSpace/skills-set.git /tmp/skills-set
+git -C /tmp/skills-set sparse-checkout set "$SKILL_NAME"
+mkdir -p "$SKILLS_DIR"
+cp -R "/tmp/skills-set/$SKILL_NAME" "$SKILLS_DIR/"
 ```
 
-请保留 `SKILL.md`、`references/` 和其他同级文件；具体发现目录、刷新和调用方式以所用 Agent 的文档为准。
+请保留该 Skill 的完整目录（包括 `SKILL.md`、`references/` 和其他同级文件）。具体 skills 发现目录、刷新和调用方式以所用 Agent 的文档为准。
 
 ## 可用 Skills
 
