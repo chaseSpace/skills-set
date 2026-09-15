@@ -27,6 +27,10 @@ cp -R "/tmp/skills-set/$SKILL_NAME" "$SKILLS_DIR/"
 
 每项 Skill 的适用范围、前置条件和使用细节均在该目录的 `SKILL.md` 中说明。
 
+## 外站 Skill 推荐
+
+- [svg-diagram](https://github.com/bybit-exchange/svg-diagram) — 为 Agent 提供统一的手写 SVG 图表规范，可生成架构图、流程图、时序图、数据流图和生命周期图；内置零依赖 lint 工具，帮助校验图表输出。
+
 ## 目录约定
 
 ```text
